@@ -51,7 +51,7 @@ const Work = () => {
 
   return (
     <>
-      <h2 className="head-text app__about">
+      <h2 className="head-text app__works">
         My Creative <span>Portfolio</span>
       </h2>
 
