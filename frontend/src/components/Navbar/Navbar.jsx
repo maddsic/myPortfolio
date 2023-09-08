@@ -14,7 +14,7 @@ const Navbar = () => {
       {/* Nav logo */}
       <div className="app__navbar-logo">
         {/* <img src={images.logo} alt="SiteLogo" /> */}
-        <h2>SAIN</h2>
+        <h2>Shyn</h2>
       </div>
 
       {/* Nav links */}
