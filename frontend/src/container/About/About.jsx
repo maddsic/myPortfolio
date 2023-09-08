@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { images } from "../../constants";
 import { urlFor, client } from "../../client";
 import { AppWrapper } from "../../wrapper";
+import { MotionWrapper } from "../../wrapper";
 
 import "./About.scss";
 
@@ -52,4 +53,10 @@ const About = () => {
   );
 };
 
-export default AppWrapper(About, "about");
+// export default AppWrapper(About, "about");
+// Wrapping out components with 2 higher order component
+export default AppWrapper(
+  MotionWrapper(About, "app__about"),
+  "about",
+  "app__whitebg"
+);

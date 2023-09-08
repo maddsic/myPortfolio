@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
-import { AppWrapper } from "../../wrapper";
+import { AppWrapper, MotionWrapper } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
 
@@ -80,7 +80,7 @@ const Work = () => {
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
 
-              <motion.dev
+              <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
                   duration: 0.25,
@@ -116,7 +116,7 @@ const Work = () => {
                     <AiFillGithub />
                   </motion.div>
                 </a>
-              </motion.dev>
+              </motion.div>
             </div>
 
             {/* WORK DESCRIPTION */}
@@ -138,4 +138,11 @@ const Work = () => {
   );
 };
 
-export default AppWrapper(Work, "work");
+// export default AppWrapper(Work, "work");
+
+// Wrapping out components with 2 higher order component
+export default AppWrapper(
+  MotionWrapper(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
